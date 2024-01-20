@@ -59,7 +59,7 @@ var results = Array<Int>()
 
 // Enumerations
 let result = "failure"
-let result2 ="failed"
+let result2 = "failed"
 let result3 = "fail"
 
 enum Result {
