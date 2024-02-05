@@ -5,4 +5,5 @@
  2. [Day 2 – arrays, dictionaries, sets, and enums](Day%202)
  3. [Day 3 – operators and conditions](Day%203)
  4. [Day 4 – loops, loops, and more loops](Day%204)
+ 5. [Day 5 – functions, parameters, and errors](Day%205)
  */
