@@ -6,4 +6,5 @@
  3. [Day 3 – operators and conditions](Day%203)
  4. [Day 4 – loops, loops, and more loops](Day%204)
  5. [Day 5 – functions, parameters, and errors](Day%205)
+ 6. [Day 6 – closures part one](Day%206)
  */
