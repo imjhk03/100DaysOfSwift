@@ -8,4 +8,5 @@
  5. [Day 5 – functions, parameters, and errors](Day%205)
  6. [Day 6 – closures part one](Day%206)
  7. [Day 7 – closures part two](Day%207)
+ 8. [Day 8 – structs, properties, and methods](Day%208)
  */
