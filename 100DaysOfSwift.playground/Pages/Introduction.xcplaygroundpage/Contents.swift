@@ -10,4 +10,5 @@
  7. [Day 7 – closures part two](Day%207)
  8. [Day 8 – structs, properties, and methods](Day%208)
  9. [Day 9 – access control, static properties, and laziness](Day%209)
+ 10. [Day 10 – classes and inheritance](Day%2010)
  */
