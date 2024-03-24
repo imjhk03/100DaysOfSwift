@@ -11,4 +11,5 @@
  8. [Day 8 – structs, properties, and methods](Day%208)
  9. [Day 9 – access control, static properties, and laziness](Day%209)
  10. [Day 10 – classes and inheritance](Day%2010)
+ 11. [Day 11 – protocols, extensions, and protocol extensions](Day%2011)
  */
