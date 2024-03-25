@@ -13,4 +13,5 @@
  10. [Day 10 – classes and inheritance](Day%2010)
  11. [Day 11 – protocols, extensions, and protocol extensions](Day%2011)
  12. [Day 12 – optionals, unwrapping, and typecasting](Day%2012)
+ 13. [Day 13 – Swift review, day one](Day%2013)
  */
