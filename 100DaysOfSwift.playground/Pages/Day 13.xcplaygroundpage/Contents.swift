@@ -5,11 +5,11 @@
 
 import Foundation
 
-// Variables and constants
+// 1. Variables and constants
 var name = "Tim McGraw"
 name = "Romeo"
 
-// Types of Data
+// 2. Types of Data
 var name: String
 name = "Tim McGraw"
 
@@ -20,12 +20,14 @@ age = 25
 //name = 25
 //age = "Tim McGraw"
 
+// Float and Double
 var latitude: Double
 latitude = 36.166667
 
 var longtitude: Float
 longtitude = -1234586.783333
 
+// Boolean
 var stayOutTooLate: Bool
 stayOutTooLate = true
 
@@ -34,13 +36,14 @@ nothingInBrain = true
 
 var missABeat = false
 
+// Using type annotations wisely
 var name: String = "Tim McGraw"
 
 let age = 25
 let longitude = -86.783333
 var nothingInBrain = true
 
-// Operators
+// 3. Operators
 var a = 10
 a = a + 1
 a = a - 1
@@ -58,6 +61,7 @@ var name1 = "Tim McGraw"
 var name2 = "Romeo"
 var both = name1 + " and " + name2
 
+// Comparison operators
 var a = 1.1
 var b = 2.2
 var c = a + b
@@ -75,7 +79,7 @@ var stayOutTooLate = true
 stayOutTooLate
 !stayOutTooLate
 
-// String Interpolation
+// 4. String Interpolation
 var name = "Tim McGraw"
 var age = 25
 var latitude = 36.166667
@@ -84,7 +88,7 @@ var latitude = 36.166667
 
 "Your age is \(age) years old. In another \(age) years you will be \(age * 2)"
 
-// Arrays
+// 5. Arrays
 var evenNumbers = [2, 4, 6, 8]
 var songs: [Any] = ["Shake it Off", "You Belong with Me", "Back to December", 3]
 
@@ -94,9 +98,11 @@ songs[2]
 
 type(of: songs)
 
+// Creating arrays
 var songs = [String]()
 songs[0] = "Shake it Off"
 
+// Array operators
 var songs1: [Any] = ["Shake it Off", "You Belong with Me", "Love Story"]
 var songs2 = ["Today was a Fairytale", "Welcome to New York", "Fifteen"]
 
@@ -105,7 +111,7 @@ both += ["Everything has Changed"]
 
 print(both)
 
-// Dictionaries
+// 6. Dictionaries
 var person = [
     "first": "Taylor",
     "middle": "Alison",
@@ -116,7 +122,7 @@ var person = [
 person["middle"]
 person["month"]
 
-// Conditional statements
+// 7. Conditional statements
 var action: String
 var person = "hater"
 
@@ -128,6 +134,7 @@ if person == "hater" {
     action = "cruise"
 }
 
+// Evaluating multiple conditions
 var action: String
 var stayOutTooLate = true
 var nothingInBrain = true
@@ -136,6 +143,7 @@ if stayOutTooLate && nothingInBrain {
     action = "cruise"
 }
 
+// Looking for the opposite of truth
 var stayOutTooLate = true
 var nothingInBrain = true
 var action: String
@@ -144,7 +152,7 @@ if !stayOutTooLate && !nothingInBrain {
     action = "cruise"
 }
 
-// Loops
+// 8. Loops
 for i in 1...10 {
     print("\(i) x 10 is \(i * 10)")
 }
@@ -159,6 +167,7 @@ print(str)
 
 1 ..< 5
 
+// Looping over arrays
 var songs = ["Shake it Off", "You Belong with Me", "Look What You Made Me Do"]
 
 for song in songs {
@@ -172,6 +181,7 @@ for i in 0..<people.count {
     print("\(people[i]) gonna \(actions[i])")
 }
 
+// Inner loops
 var people = ["players", "haters", "heart-breakers", "fakers"]
 var actions = ["play", "hate", "break", "fake"]
 
@@ -186,6 +196,7 @@ for i in 0..<people.count {
     print(str)
 }
 
+// While loops
 var counter = 0
 
 while true {
@@ -208,7 +219,7 @@ for song in songs {
     print("My favorite song is \(song)")
 }
 
-// Switch case
+// 9. Switch case
 let liveAlbums = 2
 
 switch liveAlbums {

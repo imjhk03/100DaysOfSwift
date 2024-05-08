@@ -5,7 +5,7 @@
 
 import Foundation
 
-// Functions
+// 1. Functions
 func favoriteAlbum(name: String) {
     print("My favorite is \(name)")
 }
@@ -45,7 +45,8 @@ if albumIsTaylor(name: "The White Album") {
     print("Who made that?")
 }
 
-// Optionals
+
+// 2. Optionals
 /*
 func getHaterStatus(weather: String) -> String? {
     if weather == "sunny" {
@@ -119,7 +120,8 @@ var name: String = "Paul"
 var name2: String? = "Bob"
 var name3: String! = "Sophie"
 
-// Optional chaining
+
+// 3. Optional chaining
 func albumReleased(year: Int) -> String? {
     switch year {
     case 2006: return "Taylor Swift"
@@ -136,7 +138,7 @@ let album2 = albumReleased(year: 2006) ?? "unkown"
 print("The album is \(album2)")
 
 
-// Enumerations
+// 4. Enumerations
 /*
 enum WeatherType {
     case sun
@@ -185,7 +187,7 @@ func getHaterStatus(weather: WeatherType) -> String? {
 }
 
 
-// Structs
+// 5. Structs
 struct Person {
     var clothes: String
     var shoes: String
@@ -214,7 +216,8 @@ struct Person2 {
 }
 
 
-// Classes
+// 6. Classes
+// Initializing an object
 class Person3 {
     var clothes: String
     var shoes: String
