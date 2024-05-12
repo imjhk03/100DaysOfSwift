@@ -31,6 +31,8 @@ class ViewController: UIViewController {
         button3.layer.borderColor = UIColor.lightGray.cgColor
         
         askQuestion()
+        
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Score", style: .plain, target: self, action: #selector(showScoreTapped))
     }
 
     func askQuestion(action: UIAlertAction! = nil) {
@@ -45,10 +47,18 @@ class ViewController: UIViewController {
         questionsAsked += 1
     }
     
+    @objc func showScoreTapped() {
+        let ac = UIAlertController(title: "Score", message: "Your score is \(score)", preferredStyle: .alert)
+        
+        ac.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+        
+        present(ac, animated: true)
+    }
+    
     @IBAction func buttonTapped(_ sender: UIButton) {
         var title: String
         var message: String
-        var isFinalQuestion = questionsAsked >= 10
+        let isFinalQuestion = questionsAsked >= 10
         
         if sender.tag == correctAnswer {
             title = isFinalQuestion ? "Final" : "Correct"
