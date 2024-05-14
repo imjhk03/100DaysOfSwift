@@ -9,11 +9,16 @@ import UIKit
 
 class ListTableViewController: UITableViewController {
     
-    var websites = ["apple.com", "hackingwithswift.com"]
+    var websites = [String]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        if let webSitesURL = Bundle.main.url(forResource: "websites", withExtension: "txt") {
+            if let websitesList = try? String(contentsOf: webSitesURL) {
+                websites = websitesList.components(separatedBy: "\n")
+            }
+        }
     }
 
     // MARK: - Table view data source
