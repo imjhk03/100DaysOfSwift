@@ -18,6 +18,12 @@ class ViewController: UITableViewController {
         
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .action, target: self, action: #selector(shareTapped))
         
+        performSelector(inBackground: #selector(fetchImages), with: nil)
+        
+        print(pictures)
+    }
+    
+    @objc func fetchImages() {
         let fm = FileManager.default
         let path = Bundle.main.resourcePath!
         let items = try! fm.contentsOfDirectory(atPath: path)
@@ -30,7 +36,9 @@ class ViewController: UITableViewController {
             }
         }
         
-        print(pictures)
+        DispatchQueue.main.async { [weak self] in
+            self?.tableView.reloadData()
+        }
     }
     
     @objc func shareTapped() {

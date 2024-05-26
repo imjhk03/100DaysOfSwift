@@ -65,11 +65,17 @@ class ViewController: UITableViewController {
             return
         }
         
-        filteredPetitions = petitions.filter({ petition in
-            petition.title.contains(searchText) ||
-            petition.body.contains(searchText)
-        })
-        tableView.reloadData()
+        DispatchQueue.global(qos: .userInitiated).async { [weak self] in
+            guard let self else { return }
+            self.filteredPetitions = self.petitions.filter({ petition in
+                petition.title.contains(searchText) ||
+                petition.body.contains(searchText)
+            })
+        }
+        
+        DispatchQueue.main.async { [weak self] in
+            self?.tableView.reloadData()
+        }
     }
     
     @objc func creditsTapped() {
