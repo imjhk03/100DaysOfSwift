@@ -29,6 +29,16 @@ class DetailViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         navigationController?.hidesBarsOnTap = true
+        
+        if let selectedImage {
+            let defaults = UserDefaults.standard
+            var imageShownDictionary = defaults.object(forKey: "ImageShownDictionary") as? [String: Int] ?? [String: Int]()
+            
+            imageShownDictionary[selectedImage, default: 0] += 1
+            print(imageShownDictionary)
+            
+            defaults.set(imageShownDictionary, forKey: "ImageShownDictionary")
+        }
     }
     
     override func viewWillDisappear(_ animated: Bool) {

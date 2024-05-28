@@ -63,11 +63,29 @@ class ViewController: UIViewController {
         if sender.tag == correctAnswer {
             title = isFinalQuestion ? "Final" : "Correct"
             score += 1
-            message = isFinalQuestion ? "Your final score is \(score)" : "Your score is \(score)"
+            message = isFinalQuestion ? "Your final score is \(score)." : "Your score is \(score)"
+            
+            if isFinalQuestion {
+                let defaults = UserDefaults.standard
+                let savedScore = defaults.integer(forKey: "SavedScore")
+                if score > savedScore {
+                    message += "\n You beat your previous high score!"
+                    defaults.set(score, forKey: "SavedScore")
+                }
+            }
         } else {
             title = isFinalQuestion ? "Final" : "Wrong"
             score -= 1
-            message = isFinalQuestion ? "Your final score is \(score)" : "Wrong! That’s the flag of \(countries[sender.tag].uppercased())"
+            message = isFinalQuestion ? "Your final score is \(score)." : "Wrong! That’s the flag of \(countries[sender.tag].uppercased())"
+            
+            if isFinalQuestion {
+                let defaults = UserDefaults.standard
+                let savedScore = defaults.integer(forKey: "SavedScore")
+                if score > savedScore {
+                    message += "\n You beat your previous high score!"
+                    defaults.set(score, forKey: "Score")
+                }
+            }
         }
         
         let ac = UIAlertController(title: isFinalQuestion ? "End" : title, message: message, preferredStyle: .alert)

@@ -23,6 +23,11 @@ class ViewController: UITableViewController {
         print(pictures)
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        tableView.reloadData()
+    }
+    
     @objc func fetchImages() {
         let fm = FileManager.default
         let path = Bundle.main.resourcePath!
@@ -54,6 +59,14 @@ class ViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Picture", for: indexPath)
         cell.textLabel?.text = pictures[indexPath.row]
+        
+        let defaults = UserDefaults.standard
+        let imageShownDictionary = defaults.object(forKey: "ImageShownDictionary") as? [String: Int] ?? [String: Int]()
+        
+        let shownCount = imageShownDictionary[pictures[indexPath.row], default: 0]
+        
+        cell.detailTextLabel?.text = "View count: \(shownCount)"
+        
         return cell
     }
     

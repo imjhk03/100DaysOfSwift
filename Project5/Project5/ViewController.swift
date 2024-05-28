@@ -31,8 +31,23 @@ class ViewController: UITableViewController {
     }
 
     @objc func startGame() {
-        title = allWords.randomElement()
-        usedWords.removeAll(keepingCapacity: true)
+        let defaults = UserDefaults.standard
+        if let currentWord = defaults.string(forKey: "CurrentWord") {
+            if currentWord == title {
+                title = allWords.randomElement()
+                usedWords.removeAll(keepingCapacity: true)
+                
+                defaults.set(title, forKey: "CurrentWord")
+            } else {
+                title = currentWord
+                usedWords = defaults.object(forKey: "UsedWords") as? [String] ?? [String]()
+            }
+        } else {
+            title = allWords.randomElement()
+            usedWords.removeAll(keepingCapacity: true)
+            
+            defaults.set(title, forKey: "CurrentWord")
+        }
         tableView.reloadData()
     }
     
@@ -66,6 +81,9 @@ class ViewController: UITableViewController {
             if isOriginal(word: lowerAnswer) {
                 if isReal(word: lowerAnswer) {
                     usedWords.insert(lowerAnswer, at: 0)
+                    
+                    let defaults = UserDefaults.standard
+                    defaults.set(usedWords, forKey: "UsedWords")
                     
                     let indexPath = IndexPath(row: 0, section: 0)
                     tableView.insertRows(at: [indexPath], with: .automatic)
