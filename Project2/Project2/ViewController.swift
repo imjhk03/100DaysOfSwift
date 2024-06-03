@@ -60,6 +60,14 @@ class ViewController: UIViewController {
         var message: String
         let isFinalQuestion = questionsAsked >= 10
         
+        UIView.animate(withDuration: 1, delay: 0, usingSpringWithDamping: 0.5, initialSpringVelocity: 5) {
+            sender.transform = CGAffineTransform(scaleX: 0.8, y: 0.8)
+        } completion: { _ in
+            UIView.animate(withDuration: 1, delay: 0, usingSpringWithDamping: 0.5, initialSpringVelocity: 5) {
+                sender.transform = .identity
+            }
+        }
+        
         if sender.tag == correctAnswer {
             title = isFinalQuestion ? "Final" : "Correct"
             score += 1
